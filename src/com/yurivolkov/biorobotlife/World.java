@@ -1,13 +1,14 @@
 package com.yurivolkov.biorobotlife;
 import java.util.*;
 
-public class Life
+public class World
 {
-	private long age = 0;
+	private long worldAge = 0;
 	private Set<Robot> robots = new HashSet<Robot>();
 
-	public Life()
+	public World()
 	{
+	    // One newborn robot at the beginning (worldAge = 0) 
 		Robot first = new Robot();
 		while(first.getAge()<0){
 			first.liveOneMonth();
@@ -15,12 +16,12 @@ public class Life
 		robots.add(first);
 	}
 
-	public long getAge()
+	public long getWorldAge()
 	{
-		return age;
+		return worldAge;
 	}
 	
-	public long live(long months)
+	public void live(long months)
 	{
 		for (long month = 1; month <= months; month++){
 			Set<Robot> robots2 = new HashSet<Robot>();
@@ -32,12 +33,11 @@ public class Life
 				}
 			}
 			robots = robots2;
-			age++;
+			worldAge++;
 		}
-		return getCount();
 	}
 	
-	public long getCount() {
+	public long getRobotsCount() {
 		return robots.size();
 	}
 }

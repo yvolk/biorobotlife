@@ -6,7 +6,8 @@ public class Robot
 	private static AtomicLong nextId = new AtomicLong();
 
 	private long id;
-	private long age = -2;
+
+    private long age = -2;
 	private Robot child = null;
 	
 	public Robot()
@@ -14,12 +15,17 @@ public class Robot
 		this.id = nextId.getAndIncrement();
 	}
 
+    public long getId() {
+        return id;
+    }
+
 	public long getAge()
 	{
 		return age;
 	}
 	
 	public Robot liveOneMonth() {
+        age++;
 		Robot newBorn = null;
 		if (child != null) {
 			child.liveOneMonth();
@@ -28,7 +34,6 @@ public class Robot
 				child = null;
 			}
 		}
-		age++;
 		if (age > 1 ) {
 			if (child == null) {
 				child = new Robot();

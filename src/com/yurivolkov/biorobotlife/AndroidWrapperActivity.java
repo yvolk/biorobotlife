@@ -1,22 +1,17 @@
 package com.yurivolkov.biorobotlife;
 
-import java.util.List;
-
 import android.app.*;
 import android.os.*;
-import android.view.*;
 import android.widget.*;
-import java.util.*;
 
-/** Android wrapper 
- *   for the BiorobotLife quiz
+/** 
+ * Android wrapper for the BiorobotLife quiz
  */
 public class AndroidWrapperActivity extends Activity
 {
-	private static String NEWLINE = "\n";
-	private int intDump = 0;
+    private static final String NEWLINE = "\n";
+	private static final String NUMBER_OF_MONTHS_TO_LIVE = "50";
 
-    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState)
 	{
@@ -30,7 +25,6 @@ public class AndroidWrapperActivity extends Activity
 			e.printStackTrace();
 			message += e.getClass().getName() + " ";
 			message += e.getMessage() + NEWLINE;
-			message += "intDump=" + intDump + NEWLINE;
 		}
 
 		TextView messageView = (TextView) findViewById(R.id.message);
@@ -38,8 +32,8 @@ public class AndroidWrapperActivity extends Activity
     }
 
 	private String live() {
-		Launcher.main("50");
-		String message = Launcher.printed + NEWLINE;
+		ConsoleWrapper.main( new String[]{NUMBER_OF_MONTHS_TO_LIVE});
+		String message = ConsoleWrapper.printed + NEWLINE;
 
 		return message;
 	}
