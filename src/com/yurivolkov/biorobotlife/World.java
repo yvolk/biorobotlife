@@ -22,15 +22,15 @@ public class World {
 
     public void live(long months) {
         for (long month = 1; month <= months; month++) {
-            Set<Robot> robots2 = new HashSet<Robot>();
+            Set<Robot> robotsNext = new HashSet<Robot>();
             for (Robot robot : robots) {
                 Robot newBorn = robot.liveOneMonth();
-                robots2.add(robot);
+                robotsNext.add(robot);
                 if (newBorn != null) {
-                    robots2.add(newBorn);
+                    robotsNext.add(newBorn);
                 }
             }
-            robots = robots2;
+            robots = robotsNext;
             worldAge++;
         }
     }

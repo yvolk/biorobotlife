@@ -4,10 +4,13 @@ package com.yurivolkov.biorobotlife;
 import java.util.concurrent.atomic.*;
 
 public class Robot {
+    private static final int REPRODUCTIVE_AGE = 2;
+    private static final int MONTHS_TO_BUILD_CLONE = 2;
+
     private static AtomicLong nextId = new AtomicLong(1);
 
     private long id;
-    private long age = -2;
+    private long age = - MONTHS_TO_BUILD_CLONE;
     private Robot child = null;
 
     public Robot() {
@@ -32,7 +35,7 @@ public class Robot {
                 child = null;
             }
         }
-        if (age > 1) {
+        if (age >= REPRODUCTIVE_AGE) {
             if (child == null) {
                 child = new Robot();
             }
