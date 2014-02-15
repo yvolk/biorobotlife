@@ -4,7 +4,7 @@ package com.yurivolkov.biorobotlife;
 import java.util.concurrent.atomic.*;
 
 public class Robot {
-    private static AtomicLong nextId = new AtomicLong();
+    private static AtomicLong nextId = new AtomicLong(1);
 
     private long id;
     private long age = -2;
