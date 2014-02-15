@@ -8,8 +8,9 @@ Initially the application was developed on an Android device, so it has a wrappe
 
 The same code may be launched as Java console application. 
 For Eclipse: Create separate "Runtime configuration" (Run "ConsoleWrapper.java" as "Java Application" and then customize the Runtime Configuration):
-1. "Main" tab: Set com.yurivolkov.biorobotlife.ConsoleWrapper as a Main class
-2. "Arguments" tab: Set this argument (for 50 months of life): 50
-3. "JRE" tab: Select "JavaSE" 1.5 or above as an "Execution environment"
-4. "Classpath" tab: Remove Android from classpath
-- not you may launch the same code both as Android application and as Java console application
+# "Main" tab: Set com.yurivolkov.biorobotlife.ConsoleWrapper as a Main class
+# "Arguments" tab: Set this argument (for 50 months of life): 50
+# "JRE" tab: Select "JavaSE" 1.5 or above as an "Execution environment"
+# "Classpath" tab: Remove Android from classpath
+
+- Now you may launch the same code both as Android application and as Java console application
