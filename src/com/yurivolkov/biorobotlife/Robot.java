@@ -3,17 +3,14 @@ package com.yurivolkov.biorobotlife;
 
 import java.util.concurrent.atomic.*;
 
-public class Robot
-{
+public class Robot {
     private static AtomicLong nextId = new AtomicLong();
 
     private long id;
-
     private long age = -2;
     private Robot child = null;
 
-    public Robot()
-    {
+    public Robot() {
         this.id = nextId.getAndIncrement();
     }
 
@@ -21,8 +18,7 @@ public class Robot
         return id;
     }
 
-    public long getAge()
-    {
+    public long getAge() {
         return age;
     }
 

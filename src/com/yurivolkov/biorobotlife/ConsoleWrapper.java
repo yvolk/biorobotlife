@@ -4,8 +4,7 @@ package com.yurivolkov.biorobotlife;
 /**
  * Console application for the BiorobotLife quiz
  */
-public class ConsoleWrapper
-{
+public class ConsoleWrapper {
     private static final String NEWLINE = "\n";
     public static String printed = "";
     private static long monthsToLive = 0;

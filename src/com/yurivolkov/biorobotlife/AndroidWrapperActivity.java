@@ -8,14 +8,12 @@ import android.widget.*;
 /**
  * Android wrapper for the BiorobotLife quiz
  */
-public class AndroidWrapperActivity extends Activity
-{
+public class AndroidWrapperActivity extends Activity {
     private static final String NEWLINE = "\n";
     private static final String NUMBER_OF_MONTHS_TO_LIVE = "50";
 
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
@@ -37,7 +35,6 @@ public class AndroidWrapperActivity extends Activity
             NUMBER_OF_MONTHS_TO_LIVE
         });
         String message = ConsoleWrapper.printed + NEWLINE;
-
         return message;
     }
 }
